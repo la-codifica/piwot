@@ -1,12 +1,13 @@
-var koa = require('koa');
-var route = require('koa-route');
+'use strict';
 
-var app = new koa();
+var koa = require('koa'); 
+var config = require('./config/config'); 
+var routes = require('./config/routes');
+var server = require('./config/server');
 
-app.use(route.get('/', function(ctx, next) {
-    ctx.body = "<h1>!!!***PIWOT work has started***!!!</h1>";
-}));
+var app = new koa(); 
+server.configure(app, config);
+routes.configure(app, config);
 
-var port = 8055;
-app.listen(port);
-console.log('[PIWOT] server started on URL: http://localhost:' + port);
+app.listen(config.app.port);
+console.log(config.app.name + ' server started on URL: http://localhost:' + config.app.port);
