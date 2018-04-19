@@ -1,0 +1,24 @@
+{
+  "name": "piwot",
+  "version": "1.0.0",
+  "description": "Program Iteration Work Organizing Tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/la-codifica/piwot.git"
+  },
+  "author": "Manooj Murali & Santosh Patel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/la-codifica/piwot/issues"
+  },
+  "homepage": "https://github.com/la-codifica/piwot#readme",
+  "dependencies": {
+    "koa": "^2.5.0",
+    "koa-route": "^3.2.0",
+    "nodemon": "^1.17.3"
+  }
+}
