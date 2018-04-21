@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Layout from './components/Layout/Layout';
+import Projects from './components/Projects/Projects';
 
 class App extends Component {
-  render() {
+  state = {
+    projects: [
+      { id:1, name: "Avengers", owner: "Nick Fury" },
+      { id:2, name: "Project Docile", owner: "Bruce Banner" },
+      { id:3, name: "Humility Framework", owner: "Tony Stark" },
+      { id:4, name: "Project Save Earth", owner: "Peter Parker" },
+    ]
+  };
+
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to PIWOT</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className='App'>
+        <Layout pageTitle="Projects">
+          <Projects projects={this.state.projects} />
+        </Layout>
       </div>
-    );
+    )
   }
 }
 
