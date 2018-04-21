@@ -1,16 +1,16 @@
 import React from 'react';
-import Aux from '../../hoc/Aux';
+import AuxTag from '../../hoc/AuxTag';
 import Header from '../Header/Header';
 
 import './Layout.css';
 
 const layout = (props) => (
-    <Aux>
+    <AuxTag>
         <Header pageTitle={props.pageTitle} />
         <main className="content">
             {props.children}
         </main>
-    </Aux>
+    </AuxTag>
 );
 
 export default layout;
