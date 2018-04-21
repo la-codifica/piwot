@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/la-codifica/piwot#readme",
   "dependencies": {
+    "jsonwebtoken": "^8.2.1",
     "koa": "^2.5.0",
+    "koa-body": "^2.5.0",
+    "koa-jwt": "^3.3.1",
     "koa-logger": "^3.2.0",
-    "koa-route": "^3.2.0",
+    "koa-router": "^7.4.0",
     "nodemon": "^1.17.3"
   }
 }
