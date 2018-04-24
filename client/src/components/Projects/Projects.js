@@ -2,8 +2,15 @@ import React from 'react';
 import ProjectLineItem from './ProjectLineItem';
 import './Projects.css';
 
-const projects = (props) => {      
-    let projects = props.projects;
+const projects = (props) => {
+
+    let projects = [
+        { id: 1, name: "Avengers", owner: "Nick Fury" },
+        { id: 2, name: "Project Docile", owner: "Bruce Banner" },
+        { id: 3, name: "Humility Framework", owner: "Tony Stark" },
+        { id: 4, name: "Project Save Earth", owner: "Peter Parker" },
+    ];
+
     let renderContent = null;
 
     if (projects && projects.length > 0) {
@@ -18,6 +25,7 @@ const projects = (props) => {
                         name={project.name}
                         owner={project.owner}
                         key={project.id}
+                        id={project.id}
                     />
                 })}
             </div>

@@ -1,0 +1,17 @@
+ul {
+    list-style: none;
+    padding: 15px;
+}
+
+div {
+    text-align: left;
+}
+
+.content > div {
+    padding: 15px;
+}
+
+.pi-header-bar > * {
+    display: inline-block;
+    padding: 2px 10px 2px 2px;
+}

@@ -1,15 +1,15 @@
 import React from 'react';
-import './Header.css'
+import './Header.css';
+import { Link, NavLink } from 'react-router-dom';
 
 const header = (props) => {
     return (
         <div className="header-container">
-            <div className="header-title">PIWOT</div>
+            <Link className="header-title" to="/">PIWOT</Link>
             <div className="page-title">{props.pageTitle}</div>
             <div className="header-toolbar">
-                <i className="fa fa-cog fa-fw" />
-                <i className="fa fa-question fa-fw" />
-                <i className="fa fa-sign-out-alt fa-fw" />
+                <NavLink to="/settings"><i className="fa fa-cog fa-fw" /></NavLink>
+                <NavLink to="/help"><i className="fa fa-question fa-fw" /></NavLink>
             </div>
         </div>
     );
