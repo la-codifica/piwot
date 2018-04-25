@@ -3,6 +3,7 @@
 var router = require('koa-router');
 var authenticator = require('../app/authentication/authentication');
 var projectService = require('../app/services/projectService');
+var memberService = require('../app/services/memberService');
 
 module.exports.configure = function (app, config) {
 
@@ -27,6 +28,11 @@ module.exports.configure = function (app, config) {
 
     _.get('/projects/:id', function(ctx, next) {
         ctx.body = projectService.getProject(ctx.params.id);
+        ctx.status = 200;
+    });
+
+    _.get('/team/:id', function(ctx) {
+        ctx.body = memberService.getMembers(ctx.params.id);
         ctx.status = 200;
     });
 
