@@ -17,6 +17,6 @@ module.exports = {
         if (project && project.id == id) {
             return project;
         }
-        return {};
+        return [];
     }
 }
