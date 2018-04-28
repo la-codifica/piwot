@@ -746,16 +746,20 @@ const membersTeam2 = [
     },
 ];
 
-module.exports = {
-    getMembers: function(teamId) {
-        switch(teamId) {
-            case "1":
-                return membersTeam1;
-                break;
-            case "2":
-                return membersTeam2;
-                break;
-        }
-        return [];
+var getMembers = function(ctx) {
+    let teamId = ctx.params.id;
+    switch(teamId) {
+        case "1":
+            ctx.body = membersTeam1;
+            break;
+        case "2":
+            ctx.body = membersTeam2;
+            break;
     }
+    ctx.status = 200;
+    return ctx;
+}
+
+module.exports = {
+    getMembers
 }

@@ -1,9 +1,9 @@
 'use strict';
 
 var router = require('koa-router');
-var authenticator = require('../app/authentication/authentication');
-var projectService = require('../app/services/projectService');
-var memberService = require('../app/services/memberService');
+var auth = require('../app/auth/auth');
+var project = require('../app/project/project');
+var team = require('../app/team/team');
 
 module.exports.configure = function (app, config) {
 
@@ -12,28 +12,19 @@ module.exports.configure = function (app, config) {
     });
 
     _.post('/login', function (ctx, next) {
-        /* TODO login API*/
-        authenticator.authenticate(ctx);
-    });
-
-    _.get('/dashboard', function(ctx, next) {
-        ctx.body = 'PIWOT dashboard at your service !!!';
-        console.log(ctx.state.user);
+        auth.authenticate(ctx);
     });
 
     _.get('/projects', function(ctx, next) {
-        ctx.body = projectService.getProjects();
-        ctx.status = 200;
+        project.getProjects(ctx);
     });
 
     _.get('/projects/:id', function(ctx, next) {
-        ctx.body = projectService.getProject(ctx.params.id);
-        ctx.status = 200;
+        project.getProject(ctx);
     });
 
     _.get('/team/:id', function(ctx) {
-        ctx.body = memberService.getMembers(ctx.params.id);
-        ctx.status = 200;
+        team.getMembers(ctx);
     });
 
     app.use(_.routes());
